@@ -45,6 +45,11 @@ raw_parser(const char *str, RawParseMode mode)
 	base_yy_extra_type yyextra;
 	int			yyresult;
 
+	/* YOUR ADDITION START */
+	fprintf(stdout, "\n--- Electrony v3 GSoC Debug: Received query: %s ---\n", str);
+	fflush(stdout);
+	/* YOUR ADDITION END */
+
 	/* initialize the flex scanner */
 	yyscanner = scanner_init(str, &yyextra.core_yy_extra,
 							 &ScanKeywords, ScanKeywordTokens);
